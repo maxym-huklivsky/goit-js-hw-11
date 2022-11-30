@@ -2,6 +2,37 @@ body {
   text-align: center;
 }
 
+p {
+  margin: 0;
+}
+
+.search-form {
+  margin-bottom: 30px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.photo-card {
+  max-width: 350px;
+  border: 1px solid black;
+}
+
+.gallery-pic {
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  display: flex;
+  padding: 15px 10px;
+  gap: 10px;
+}
+
 .load-more {
   margin-top: 40px;
 }
