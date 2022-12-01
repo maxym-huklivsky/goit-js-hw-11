@@ -4,24 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
-    </form>
+    <header class="header">
+      <form class="search-form" id="search-form">
+        <div class="wrap-input">
+          <input
+            class="input"
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search images..."
+          />
+          <button type="submit" class="submit">Search</button>
+        </div>
+      </form>
+    </header>
+    <main class="main">
+      <div class="gallery-wrap">
+        <div class="gallery"></div>
+      </div>
 
-    <div class="gallery"></div>
+      <button type="button " class="load-more disable" disabled>
+        Load more
+      </button>
+    </main>
 
-    <button type="button" class="load-more" disabled>Load more</button>
-
-    <script src="./index.js" type="module"></script>
+    <script src="./markupRender.js" type="module"></script>
   </body>
 </html>
