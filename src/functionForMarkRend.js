@@ -50,7 +50,7 @@ function hideButton(btn) {
 }
 
 function showButton(btn) {
-  loadButton.style.display = 'block';
+  btn.style.display = 'block';
 }
 
 function notifyFailure(message) {

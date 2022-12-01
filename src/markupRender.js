@@ -25,7 +25,12 @@ async function onSearchCards(e) {
 
   // Змінні
   const inputValue = e.currentTarget.elements.searchQuery.value;
-  const cards = await fetch.fetchOnSubmit(inputValue);
+  let cards;
+  try {
+    cards = await fetch.fetchOnSubmit(inputValue);
+  } catch (error) {
+    notifyFailure(`Error: ${error.name}`);
+  }
 
   // Якщо нічого не прийшло
   if (cards.length === 0) {
@@ -61,7 +66,12 @@ async function onSearchCards(e) {
 loadButton.addEventListener('click', onLoadMoreCards);
 
 async function onLoadMoreCards() {
-  const cards = await fetch.fetchOnLoadMore(fetch.inputValue);
+  let cards;
+  try {
+    cards = await fetch.fetchOnLoadMore(fetch.inputValue);
+  } catch (error) {
+    notifyFailure(`Error: ${error.name}`);
+  }
 
   // DOM
   const markup = createMarkup(cards);
