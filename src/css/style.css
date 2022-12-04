@@ -46,7 +46,13 @@ button {
 
 .submit {
   height: 100%;
-  width: 23%;
+  width: 25%;
+  border: 0;
+}
+
+.submit-btn {
+  height: 100%;
+  width: 100%;
   border: 0;
 }
 
