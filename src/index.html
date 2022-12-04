@@ -25,18 +25,17 @@
             autocomplete="off"
             placeholder="Search images..."
           />
-          <button type="submit" class="submit">Search</button>
+          <a href="#gallery"
+            ><button type="submit" class="submit">Search</button></a
+          >
         </div>
       </form>
     </header>
     <main class="main">
       <div class="gallery-wrap">
-        <div class="gallery"></div>
+        <div id="gallery" class="gallery"></div>
       </div>
-
-      <button type="button " class="load-more disable" disabled>
-        Load more
-      </button>
+      <button type="button " class="load-more disable">Load more</button>
     </main>
 
     <script src="./markupRender.js" type="module"></script>

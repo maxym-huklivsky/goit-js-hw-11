@@ -23,8 +23,17 @@ form.addEventListener('submit', onSearchCards);
 async function onSearchCards(e) {
   e.preventDefault();
 
+  cleanGallery(gallery);
+
   // Змінні
-  const inputValue = e.currentTarget.elements.searchQuery.value;
+  const inputValue = e.currentTarget.elements.searchQuery.value.trim();
+
+  if (inputValue === '') {
+    return notifyFailure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
+  }
+
   let cards;
   try {
     cards = await fetch.fetchOnSubmit(inputValue);
@@ -39,15 +48,8 @@ async function onSearchCards(e) {
     );
   }
 
-  cleanGallery(gallery);
-
   // Кнока Load more
-  const buttonIsHiden = loadButton.style.display === 'none';
-  if (buttonIsHiden) {
-    showButton(loadButton);
-  }
-  loadButton.classList.remove('disable');
-  loadButton.removeAttribute('disabled');
+  showButton(loadButton);
 
   // DOM
   const markup = createMarkup(cards);
