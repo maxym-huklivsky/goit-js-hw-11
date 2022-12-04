@@ -29,6 +29,7 @@ async function onSearchCards(e) {
   const inputValue = e.currentTarget.elements.searchQuery.value.trim();
 
   if (inputValue === '') {
+    hideButton(loadButton);
     return notifyFailure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
@@ -43,6 +44,7 @@ async function onSearchCards(e) {
 
   // Якщо нічого не прийшло
   if (cards.length === 0) {
+    hideButton(loadButton);
     return notifyFailure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
